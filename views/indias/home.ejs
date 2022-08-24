@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate')%>
+
+
+    <h1>Indian Cities</h1>
+
+
+
+    <% for (let india of indias){%>
+
+
+        <div class="card" mb-3>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" alt="" src="https://source.unsplash.com/collection/india? <%= india.city %>"
+                        width="500" height="400">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= india.city %>
+                        </h5>
+                        <p class="card-text">
+                            <%= india.state %>
+                        </p>
+                        <p class="card-text">
+                            Population : <%= india.population %>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                lat,long(<%= india.location%>)
+                            </small>
+                        </p>
+                        <a class="btn btn-primary" href="https://en.wikipedia.org/wiki/<%=india.city%>">View
+                            <%=india.city%>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <% }%>
